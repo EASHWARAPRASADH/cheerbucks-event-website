@@ -10,7 +10,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
                         <Link to="/" className="flex items-center gap-3 mb-6">
-                            <img src="/logo.jpg" alt="Cheerbucks Logo" className="h-12 w-12 rounded-full object-cover border-2 border-primary-500" />
+                            <img src="/assets/logo.jpeg" alt="Cheerbucks Logo" className="h-12 w-12 rounded-full object-cover border-2 border-primary-500" />
                             <div className="flex flex-col">
                                 <h2 className="font-serif text-2xl font-bold text-white leading-none">Cheerbucks</h2>
                                 <span className="text-xs text-primary-400 font-medium tracking-wide">Creating Memorable Occasions</span>

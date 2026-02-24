@@ -164,8 +164,8 @@ const Services = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 relative z-10 w-full md:w-auto">
-                        <a href="tel:+919176468656" className="btn bg-white text-primary-700 hover:bg-primary-50 px-8 py-3 rounded-full flex gap-2 items-center justify-center whitespace-nowrap">
-                            <span className="text-xl">📞</span> Call Now
+                        <a href="https://wa.me/919176468656" target="_blank" rel="noreferrer" className="btn bg-white text-primary-700 hover:bg-primary-50 px-8 py-3 rounded-full flex gap-2 items-center justify-center whitespace-nowrap">
+                            <span className="text-xl">💬</span> Contact Us
                         </a>
                         <Link to="/contact" className="btn border border-white/30 hover:border-white text-white px-8 py-3 rounded-full flex items-center justify-center whitespace-nowrap">
                             Plan Your Event →

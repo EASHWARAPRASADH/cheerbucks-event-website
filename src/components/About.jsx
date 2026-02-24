@@ -25,7 +25,7 @@ const About = () => {
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="/assets/Star/star%2010.jpeg"
+                                src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"
                                 alt="About Cheerbucks"
                                 className="w-full h-[500px] object-cover"
                             />

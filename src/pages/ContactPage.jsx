@@ -1,10 +1,49 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const ContactPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        eventType: 'Wedding',
+        message: ''
+    });
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.submitter && e.preventDefault(); // Prevent default form submission if triggered by button
+
+        const { name, phone, email, eventType, message } = formData;
+
+        // WhatsApp number
+        const phoneNumber = "919176468656";
+
+        // Format the message
+        const text = `Hello Cheerbucks! I would like to plan an event.
+        
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+*Event Type:* ${eventType}
+*Message:* ${message}
+
+Looking forward to hearing from you!`;
+
+        // Encode the message for the URL
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank');
+    };
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -41,42 +80,79 @@ const ContactPage = () => {
                     >
                         <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">Ready to discuss your event?</h2>
 
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="John Doe" />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="John Doe"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                    <input type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="+91 9876543210" />
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="+91 9876543210"
+                                    />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="john@example.com" />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="john@example.com"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Event Type</label>
-                                    <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-white">
-                                        <option>Wedding</option>
-                                        <option>Corporate Event</option>
-                                        <option>Birthday Party</option>
-                                        <option>Anniversary</option>
-                                        <option>Other</option>
+                                    <select
+                                        name="eventType"
+                                        value={formData.eventType}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all bg-white"
+                                    >
+                                        <option value="Wedding">Wedding</option>
+                                        <option value="Corporate Event">Corporate Event</option>
+                                        <option value="Birthday Party">Birthday Party</option>
+                                        <option value="Anniversary">Anniversary</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" placeholder="Tell us about your event vision..."></textarea>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    rows="4"
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                    placeholder="Tell us about your event vision..."
+                                ></textarea>
                             </div>
 
                             <button type="submit" className="w-full btn btn-primary py-4 text-lg font-semibold">
-                                Send Message
+                                Send via WhatsApp
                             </button>
                         </form>
                     </motion.div>

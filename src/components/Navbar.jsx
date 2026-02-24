@@ -39,7 +39,7 @@ const Navbar = () => {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-3">
-                    <img src="/logo.jpg" alt="Cheerbucks Logo" className="h-10 w-10 rounded-full object-cover border-2 border-primary-400" />
+                    <img src="/assets/logo.jpeg" alt="Cheerbucks Logo" className="h-10 w-10 rounded-full object-cover border-2 border-primary-400" />
                     <div className="flex flex-col">
                         <h1 className={`font-serif text-2xl font-bold leading-none ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Cheerbucks</h1>
                         <span className={`text-xs font-medium tracking-wide ${isScrolled ? 'text-primary-600' : 'text-white/80'}`}>Creating Memorable Occasions</span>

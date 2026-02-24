@@ -8,9 +8,9 @@ const ServicesPage = () => {
     }, []);
 
     return (
-        <div className="pt-24 min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen bg-gray-50 flex flex-col">
             {/* Page Header */}
-            <section className="bg-primary-900 py-20 text-center relative overflow-hidden">
+            <section className="bg-primary-900 pt-32 pb-20 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-gray-900 opacity-80" />
                 <div className="container relative z-10">
                     <motion.h1

@@ -19,7 +19,7 @@ const ContactPage = () => {
     };
 
     const handleSubmit = (e) => {
-        e.submitter && e.preventDefault(); // Prevent default form submission if triggered by button
+        e.preventDefault(); // Prevent default form submission
 
         const { name, phone, email, eventType, message } = formData;
 

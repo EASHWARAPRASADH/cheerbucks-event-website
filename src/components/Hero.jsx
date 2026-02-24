@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -52,7 +53,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="flex flex-col sm:flex-row gap-4"
                 >
-                    <a href="#contact" className="btn btn-primary px-8 py-4 text-lg">Plan Your Event</a>
+                    <Link to="/contact" className="btn btn-primary px-8 py-4 text-lg">Plan Your Event</Link>
                     <a href="https://wa.me/919176468656" target="_blank" rel="noreferrer" className="btn px-8 py-4 text-lg bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-colors">
                         WhatsApp Us
                     </a>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wand2, Clock, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -127,16 +128,19 @@ const About = () => {
                             </motion.div>
                         </div>
 
-                        <motion.a
-                            href="#contact"
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.7 }}
-                            className="btn btn-outline px-8 rounded-full inline-flex items-center gap-2"
                         >
-                            Learn Our Story <span>→</span>
-                        </motion.a>
+                            <Link
+                                to="/about"
+                                className="btn btn-outline px-8 rounded-full inline-flex items-center gap-2"
+                            >
+                                Learn Our Story <span>→</span>
+                            </Link>
+                        </motion.div>
 
                     </div>
                 </div>

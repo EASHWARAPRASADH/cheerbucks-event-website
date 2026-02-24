@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,13 +9,13 @@ const Footer = () => {
 
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
-                        <a href="/" className="flex items-center gap-3 mb-6">
+                        <Link to="/" className="flex items-center gap-3 mb-6">
                             <img src="/logo.jpg" alt="Cheerbucks Logo" className="h-12 w-12 rounded-full object-cover border-2 border-primary-500" />
                             <div className="flex flex-col">
                                 <h2 className="font-serif text-2xl font-bold text-white leading-none">Cheerbucks</h2>
                                 <span className="text-xs text-primary-400 font-medium tracking-wide">Creating Memorable Occasions</span>
                             </div>
-                        </a>
+                        </Link>
                         <p className="text-gray-400 mb-6 leading-relaxed">
                             Premier event planning company in Chennai with 15+ years of experience creating unforgettable celebrations.
                         </p>
@@ -24,11 +25,11 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-serif text-xl font-semibold mb-6">Quick Links</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="/" className="hover:text-primary-400 transition-colors">Home</a></li>
-                            <li><a href="#about" className="hover:text-primary-400 transition-colors">About Us</a></li>
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">Services</a></li>
-                            <li><a href="#gallery" className="hover:text-primary-400 transition-colors">Gallery</a></li>
-                            <li><a href="#contact" className="hover:text-primary-400 transition-colors">Contact</a></li>
+                            <li><Link to="/" className="hover:text-primary-400 transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Us</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Services</Link></li>
+                            <li><Link to="/gallery" className="hover:text-primary-400 transition-colors">Gallery</Link></li>
+                            <li><Link to="/contact" className="hover:text-primary-400 transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -36,11 +37,11 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-serif text-xl font-semibold mb-6">Our Services</h4>
                         <ul className="flex flex-col gap-3">
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">Wedding Events</a></li>
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">Corporate Events</a></li>
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">Birthday Parties</a></li>
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">Anniversary Celebrations</a></li>
-                            <li><a href="#services" className="hover:text-primary-400 transition-colors">School & College Events</a></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Wedding Events</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Corporate Events</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Birthday Parties</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Anniversary Celebrations</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">School & College Events</Link></li>
                         </ul>
                     </div>
 
@@ -71,9 +72,9 @@ const Footer = () => {
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p>© 2025 Cheerbucks™. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span>|</span>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                     <p>Made with ❤️ in Chennai</p>
                 </div>

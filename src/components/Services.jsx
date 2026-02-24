@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Briefcase, Gift, Award, BookOpen, Music } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
     {
@@ -166,9 +167,9 @@ const Services = () => {
                         <a href="tel:+919176468656" className="btn bg-white text-primary-700 hover:bg-primary-50 px-8 py-3 rounded-full flex gap-2 items-center justify-center whitespace-nowrap">
                             <span className="text-xl">📞</span> Call Now
                         </a>
-                        <a href="#contact" className="btn border border-white/30 hover:border-white text-white px-8 py-3 rounded-full flex items-center justify-center whitespace-nowrap">
-                            View All Services →
-                        </a>
+                        <Link to="/contact" className="btn border border-white/30 hover:border-white text-white px-8 py-3 rounded-full flex items-center justify-center whitespace-nowrap">
+                            Plan Your Event →
+                        </Link>
                     </div>
                 </motion.div>
 

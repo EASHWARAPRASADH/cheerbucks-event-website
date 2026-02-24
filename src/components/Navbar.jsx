@@ -19,22 +19,22 @@ const Navbar = () => {
                 <a href="/" className="flex items-center gap-3">
                     <img src="/logo.jpg" alt="Cheerbucks Logo" className="h-10 w-10 rounded-full object-cover border-2 border-primary-400" />
                     <div className="flex flex-col">
-                        <h1 className="font-serif text-2xl font-bold text-gray-900 leading-none">Cheerbucks</h1>
-                        <span className="text-xs text-primary-600 font-medium tracking-wide">Creating Memorable Occasions</span>
+                        <h1 className={`font-serif text-2xl font-bold leading-none ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Cheerbucks</h1>
+                        <span className={`text-xs font-medium tracking-wide ${isScrolled ? 'text-primary-600' : 'text-primary-300'}`}>Creating Memorable Occasions</span>
                     </div>
                 </a>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="/" className="text-sm font-medium hover:text-primary-600 transition-colors">Home</a>
-                    <a href="#about" className="text-sm font-medium hover:text-primary-600 transition-colors">About</a>
-                    <a href="#services" className="text-sm font-medium hover:text-primary-600 transition-colors">Services</a>
-                    <a href="#gallery" className="text-sm font-medium hover:text-primary-600 transition-colors">Gallery</a>
+                    <a href="/" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-200 hover:text-white'}`}>Home</a>
+                    <a href="#about" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-200 hover:text-white'}`}>About</a>
+                    <a href="#services" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-200 hover:text-white'}`}>Services</a>
+                    <a href="#gallery" className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-gray-200 hover:text-white'}`}>Gallery</a>
                     <a href="#contact" className="btn btn-primary text-sm px-6 py-2">Plan Your Event</a>
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className="md:hidden text-gray-900" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <button className={isScrolled ? 'text-gray-900' : 'text-white'} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>

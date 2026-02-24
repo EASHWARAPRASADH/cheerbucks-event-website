@@ -2,12 +2,18 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-    'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
-    'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
-    'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
-    'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
-    'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80'
+    '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg',
+    '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.26%20PM.jpeg',
+    '/assets/Bithday/decoration/m%20birthday.jpeg',
+    '/assets/Bithday/baby%201/2.jpg.jpeg',
+    '/assets/Star/star%2012.jpeg',
+    '/assets/Bithday/baby%203/b%20birthday.jpeg',
+    '/assets/Bithday/baby%201/cake/1.jpg.jpeg',
+    '/assets/Star/star%203.jpeg',
+    '/assets/Bithday/baby%202/6b.jpg.jpeg',
+    '/assets/Bithday/baby%201/decoration/3.jpg.jpeg',
+    '/assets/Star/star%2021.jpeg',
+    '/assets/Bithday/cake/cake%202.jpeg'
 ];
 
 const GalleryPage = () => {

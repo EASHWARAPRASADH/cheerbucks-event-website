@@ -8,42 +8,42 @@ const services = [
         title: 'Wedding Events',
         desc: 'Magical ceremonies & elaborate receptions',
         icon: <Heart size={32} />,
-        image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
+        image: '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg',
         color: 'from-pink-500/20 to-rose-500/20'
     },
     {
         title: 'Corporate Events',
         desc: 'Professional meets, conferences & seminars',
         icon: <Briefcase size={32} />,
-        image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
+        image: '/assets/Star/star%2011.jpeg',
         color: 'from-blue-500/20 to-indigo-500/20'
     },
     {
         title: 'Birthday Celebrations',
         desc: 'Milestone birthdays made spectacular',
         icon: <Gift size={32} />,
-        image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
+        image: '/assets/Bithday/baby%201/7.jpg.jpeg',
         color: 'from-yellow-500/20 to-amber-500/20'
     },
     {
         title: 'Anniversary Parties',
         desc: 'Celebrating love milestones in style',
         icon: <Award size={32} />,
-        image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
+        image: '/assets/Star/star%206.jpeg',
         color: 'from-purple-500/20 to-fuchsia-500/20'
     },
     {
         title: 'School & College',
         desc: 'Annual days, fests & graduations',
         icon: <BookOpen size={32} />,
-        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+        image: '/assets/Star/star%208.jpeg',
         color: 'from-green-500/20 to-emerald-500/20'
     },
     {
         title: 'Cultural Programs',
         desc: 'Traditional celebrations & functions',
         icon: <Music size={32} />,
-        image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
+        image: '/assets/Star/star%2013.jpeg',
         color: 'from-orange-500/20 to-red-500/20'
     }
 ];

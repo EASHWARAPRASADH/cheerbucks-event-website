@@ -8,7 +8,7 @@ const Hero = () => {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 w-full h-full">
                 <img
-                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80"
+                    src="/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.26%20PM.jpeg"
                     alt="Elegant Event"
                     className="w-full h-full object-cover opacity-60"
                 />

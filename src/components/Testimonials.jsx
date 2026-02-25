@@ -4,25 +4,39 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
     {
-        text: "Cheerbucks made our wedding absolutely magical! Every detail was perfect. They exceeded our expectations in every single way. Truly the best event team in Chennai!",
-        name: "Priya & Karthik Sharma",
-        event: "Wedding Reception • 2024",
-        initials: "P",
+        text: "CheerBucks made our event absolutely unforgettable! From planning to execution, everything was handled professionally and creatively. The team managed every detail perfectly and made our special day stress-free. Highly recommended for any kind of event!",
+        name: "Karthikeyan M",
+        event: "Special Celebration",
+        initials: "K",
         color: "from-primary-500 to-primary-700"
     },
     {
-        text: "Outstanding service for our corporate annual meet! Professional, punctual, and perfectly organized. Cheerbucks truly understands what corporate clients need. Highly recommended!",
-        name: "Rajesh Kumar",
-        event: "Corporate Annual Meet • 2023",
-        initials: "R",
+        text: "We hired CheerBucks for our wedding, and they exceeded all expectations. The decoration, coordination, and overall management were flawless. The team was friendly, organized, and extremely professional. Truly the best event planners!",
+        name: "Vigneshwaran S",
+        event: "Wedding Celebration",
+        initials: "V",
         color: "from-blue-500 to-indigo-700"
     },
     {
-        text: "They turned our annual sports day into a grand affair! The team's dedication and organization were outstanding. Every participant was amazed by the arrangements!",
-        name: "Lakshmi Venkataraman",
-        event: "Annual Sports Meet • 2024",
-        initials: "L",
+        text: "Our corporate event was handled by CheerBucks, and it was a grand success. Their creativity and attention to detail were outstanding. Everything was on time and perfectly executed. Looking forward to working with them again!",
+        name: "Harishankar R",
+        event: "Corporate Event",
+        initials: "H",
         color: "from-emerald-400 to-teal-600"
+    },
+    {
+        text: "If you're looking for a reliable event management company, CheerBucks is the one! They organized our cultural event beautifully. The stage setup, sound, lighting – everything was top-notch. Amazing teamwork and dedication!",
+        name: "Lakshmi Priya",
+        event: "Cultural Program",
+        initials: "L",
+        color: "from-purple-500 to-fuchsia-600"
+    },
+    {
+        text: "We trusted CheerBucks for my child's birthday party, and they turned it into a magical celebration. The theme decor and arrangements were fantastic. The kids loved it, and we were stress-free throughout the event!",
+        name: "Gayathri Shankar",
+        event: "Birthday Party",
+        initials: "G",
+        color: "from-rose-400 to-red-600"
     }
 ];
 

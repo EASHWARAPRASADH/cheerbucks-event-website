@@ -54,117 +54,298 @@
     </div>
 
     <section style="padding:5rem 0;background:#fff;">
-        <div class="container">
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All Events</button>
-                <button class="filter-btn" data-filter="wedding">Weddings</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="birthday">Birthdays</button>
-                <button class="filter-btn" data-filter="cultural">Cultural</button>
+        <div class="container" id="gallery-container">
+            <!-- Folders View -->
+            <div id="folders-view"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+
+                <!-- Wedding -->
+                <div class="folder-card" data-category="wedding"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 4 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            Wedding Events</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
+                <!-- Corporate -->
+                <div class="folder-card" data-category="corporate"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://cheerbucks.com/img/corporate.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80'"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 4 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            Corporate Events</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
+                <!-- Birthday -->
+                <div class="folder-card" data-category="birthday"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://cheerbucks.com/img/birthday.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80'"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 7 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            Birthday Celebrations</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
+                <!-- Sports -->
+                <div class="folder-card" data-category="sports"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 3 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            Sports Events</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
+                <!-- School -->
+                <div class="folder-card" data-category="school"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 2 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            School & College</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
+                <!-- Cultural -->
+                <div class="folder-card" data-category="cultural"
+                    style="cursor: pointer; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative;">
+                    <div style="height: 16rem; position: relative; overflow: hidden;">
+                        <img src="https://cheerbucks.com/img/cultural.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80'"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            class="folder-img" />
+                        <div
+                            style="position: absolute; top: 1rem; left: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: #713f12; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            📁 2 Photos
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem; position: relative;">
+                        <div
+                            style="position: absolute; right: 1.5rem; top: -1.5rem; width: 3rem; height: 3rem; background: #854d0e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                            🖼️</div>
+                        <h3
+                            style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">
+                            Cultural Programs</h3>
+                        <p style="color: #854d0e; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Folder <span style="font-size: 1.25rem;">→</span></p>
+                    </div>
+                </div>
+
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="wedding">
-                    <img src="https://cheerbucks.com/img/wedding2.jpg" alt="Wedding 1"
-                        onerror="this.src='https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="corporate">
-                    <img src="https://cheerbucks.com/img/corporate.jpg" alt="Corporate"
-                        onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="birthday">
-                    <img src="https://cheerbucks.com/img/birthday.jpg" alt="Birthday"
-                        onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="cultural">
-                    <img src="https://cheerbucks.com/img/cultural.jpg" alt="Cultural"
-                        onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="wedding">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80" alt="Sports"
-                        onerror="this.src='https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="corporate">
-                    <img src="https://cheerbucks.com/img/school.jpg" alt="School"
-                        onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80'" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="wedding">
-                    <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&q=80"
-                        alt="Wedding Decor" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="birthday">
-                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80"
-                        alt="Birthday Cake" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="cultural">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
-                        alt="Cultural Program" />
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg></div>
-                    </div>
+
+            <!-- Album View -->
+            <div id="album-view" style="display: none; animation: fadeIn 0.4s ease-out;">
+                <button id="back-to-folders"
+                    style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 9999px; color: #854d0e; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s; font-size: 1rem;">
+                    ← Back to Folders
+                </button>
+                <div class="gallery-grid" id="dynamic-gallery">
+                    <!-- Images will be injected here via JS -->
                 </div>
             </div>
+
+            <style>
+                .folder-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+                }
+
+                .folder-card:hover .folder-img {
+                    transform: scale(1.05);
+                }
+
+                #back-to-folders:hover {
+                    background: #fefce8;
+                    border-color: #fde047;
+                    transform: translateX(-4px);
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
         </div>
     </section>
+
+    <!-- Folder Logic Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const folderData = {
+                wedding: [
+                    '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg',
+                    '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.26%20PM.jpeg',
+                    'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
+                    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80'
+                ],
+                corporate: [
+                    '/assets/Star/star%2012.jpeg',
+                    '/assets/Star/star%203.jpeg',
+                    '/assets/Star/star%2021.jpeg',
+                    'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&q=80'
+                ],
+                birthday: [
+                    '/assets/Bithday/decoration/m%20birthday.jpeg',
+                    '/assets/Bithday/baby%201/2.jpg.jpeg',
+                    '/assets/Bithday/baby%203/b%20birthday.jpeg',
+                    '/assets/Bithday/baby%201/cake/1.jpg.jpeg',
+                    '/assets/Bithday/baby%202/6b.jpg.jpeg',
+                    '/assets/Bithday/baby%201/decoration/3.jpg.jpeg',
+                    '/assets/Bithday/cake/cake%202.jpeg'
+                ],
+                sports: [
+                    'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
+                    'https://images.unsplash.com/photo-1526676037777-05a232554f77?w=800&q=80',
+                    'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80'
+                ],
+                school: [
+                    'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+                    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'
+                ],
+                cultural: [
+                    'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
+                    'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80'
+                ]
+            };
+
+            const foldersView = document.getElementById('folders-view');
+            const albumView = document.getElementById('album-view');
+            const dynamicGallery = document.getElementById('dynamic-gallery');
+            const backBtn = document.getElementById('back-to-folders');
+            const titleEl = document.querySelector('.page-hero h1');
+            const subtitleEl = document.querySelector('.page-hero p');
+
+            document.querySelectorAll('.folder-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const category = card.getAttribute('data-category');
+                    const title = card.querySelector('h3').innerText;
+
+                    // Switch view
+                    foldersView.style.display = 'none';
+                    albumView.style.display = 'block';
+
+                    // Update headers
+                    titleEl.innerText = title;
+                    subtitleEl.innerText = `Browse our magnificent ${title.toLowerCase()} moments.`;
+
+                    // Render images
+                    dynamicGallery.innerHTML = '';
+                    const images = folderData[category] || [];
+                    images.forEach((src, idx) => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        item.style.animation = `fadeIn 0.5s ease-out ${idx * 0.1}s backwards`;
+                        item.innerHTML = `
+                            <img src="${src}" alt="${title} ${idx + 1}" style="width:100%; height:100%; object-fit:cover;" />
+                            <div class="gallery-overlay">
+                                <div class="gallery-overlay-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                            </div>
+                        `;
+                        dynamicGallery.appendChild(item);
+
+                        // Fallback script.js lightbox logic since script.js might be missing or globally intercepting
+                        item.addEventListener('click', () => {
+                            const lb = document.getElementById('lightbox');
+                            const lbImg = document.getElementById('lightbox-img');
+                            if (lb && lbImg) {
+                                lb.classList.add('active');
+                                lbImg.src = src;
+                            }
+                        });
+                    });
+                });
+            });
+
+            backBtn.addEventListener('click', () => {
+                albumView.style.display = 'none';
+                foldersView.style.display = 'grid';
+                titleEl.innerText = 'Event Gallery';
+                subtitleEl.innerText = 'Explore our categorized event folders.';
+            });
+        });
+    </script>
 
     <!-- Lightbox -->
     <div id="lightbox">

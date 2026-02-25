@@ -44,7 +44,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl"
                 >
-                    From intimate family gatherings to grand corporate events, Cheerbucks crafts unforgettable experiences with 15+ years of excellence.
+                    From intimate family gatherings to grand corporate events, Cheerbucks crafts unforgettable experiences with 11+ years of excellence.
                 </motion.p>
 
                 <motion.div
@@ -67,15 +67,15 @@ const Hero = () => {
                     className="mt-16 pt-8 border-t border-white/20 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 text-white"
                 >
                     <div>
-                        <div className="font-serif text-4xl font-bold text-primary-400">3000+</div>
+                        <div className="font-serif text-4xl font-bold text-primary-400">3500+</div>
                         <div className="text-sm text-gray-300 uppercase tracking-widest mt-1">Events</div>
                     </div>
                     <div>
-                        <div className="font-serif text-4xl font-bold text-primary-400">50K+</div>
+                        <div className="font-serif text-4xl font-bold text-primary-400">30K+</div>
                         <div className="text-sm text-gray-300 uppercase tracking-widest mt-1">Happy Guests</div>
                     </div>
                     <div className="col-span-2 md:col-span-1 border-t border-white/20 pt-8 md:pt-0 md:border-t-0 md:border-l md:pl-8">
-                        <div className="font-serif text-4xl font-bold text-primary-400">15+</div>
+                        <div className="font-serif text-4xl font-bold text-primary-400">11+</div>
                         <div className="text-sm text-gray-300 uppercase tracking-widest mt-1">Years Experience</div>
                     </div>
                 </motion.div>

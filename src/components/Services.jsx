@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Briefcase, Gift, Award, BookOpen, Music } from 'lucide-react';
+import { Heart, Briefcase, Gift, Trophy, BookOpen, Music } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -26,10 +26,10 @@ const services = [
         color: 'from-yellow-500/20 to-amber-500/20'
     },
     {
-        title: 'Anniversary Parties',
-        desc: 'Celebrating love milestones in style',
-        icon: <Award size={32} />,
-        image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
+        title: 'Sports Events',
+        desc: 'Tournaments, marathons & sports days',
+        icon: <Trophy size={32} />,
+        image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
         color: 'from-purple-500/20 to-fuchsia-500/20'
     },
     {

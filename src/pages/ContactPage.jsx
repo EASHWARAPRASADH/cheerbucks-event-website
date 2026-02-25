@@ -132,7 +132,7 @@ Looking forward to hearing from you!`;
                                         <option value="Wedding">Wedding</option>
                                         <option value="Corporate Event">Corporate Event</option>
                                         <option value="Birthday Party">Birthday Party</option>
-                                        <option value="Anniversary">Anniversary</option>
+                                        <option value="Sports Events">Sports Events</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>

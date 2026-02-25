@@ -31,7 +31,7 @@ const Stats = () => {
     return (
         <section className="py-24 bg-white">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center lg:text-left">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const Stats = () => {
                         <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 mb-6">
                             <CheckCircle size={32} />
                         </div>
-                        <StatCounter value={3000} />
+                        <StatCounter value={3500} />
                         <div className="text-lg font-semibold text-gray-800">Events Executed</div>
                         <div className="text-gray-500 mt-1">Across South India</div>
                     </motion.div>
@@ -57,7 +57,7 @@ const Stats = () => {
                         <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 mb-6">
                             <Users size={32} />
                         </div>
-                        <StatCounter value={50} suffix="K+" />
+                        <StatCounter value={30} suffix="K+" />
                         <div className="text-lg font-semibold text-gray-800">Happy Guests</div>
                         <div className="text-gray-500 mt-1">And counting!</div>
                     </motion.div>
@@ -72,25 +72,12 @@ const Stats = () => {
                         <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 mb-6">
                             <MapPin size={32} />
                         </div>
-                        <StatCounter value={15} />
+                        <StatCounter value={11} />
                         <div className="text-lg font-semibold text-gray-800">Years Experience</div>
                         <div className="text-gray-500 mt-1">Since 2009</div>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="flex flex-col lg:items-start items-center"
-                    >
-                        <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 mb-6">
-                            <Star size={32} />
-                        </div>
-                        <StatCounter value={500} />
-                        <div className="text-lg font-semibold text-gray-800">5-Star Reviews</div>
-                        <div className="text-gray-500 mt-1">Google Verified</div>
-                    </motion.div>
+
 
                 </div>
             </div>

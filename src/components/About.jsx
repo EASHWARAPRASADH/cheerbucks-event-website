@@ -40,7 +40,7 @@ const About = () => {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-12 glass-card p-6 pr-10 border-l-4 border-l-primary-500"
                         >
-                            <div className="font-serif text-5xl font-bold text-gray-900 leading-none">15+</div>
+                            <div className="font-serif text-5xl font-bold text-gray-900 leading-none">11+</div>
                             <div className="text-sm font-medium text-gray-600 mt-2 tracking-widest uppercase">Years of<br />Excellence</div>
                         </motion.div>
                     </motion.div>
@@ -74,7 +74,7 @@ const About = () => {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-gray-600 mb-6 leading-relaxed"
                         >
-                            Cheerbucks is Chennai's premier event planning company, dedicated to transforming your special moments into extraordinary celebrations. With over 15 years of experience, we've had the privilege of orchestrating thousands of unforgettable events.
+                            Cheerbucks is Chennai's premier event planning company, dedicated to transforming your special moments into extraordinary celebrations. With over 11 years of experience, we've had the privilege of orchestrating thousands of unforgettable events.
                         </motion.p>
 
                         <motion.p

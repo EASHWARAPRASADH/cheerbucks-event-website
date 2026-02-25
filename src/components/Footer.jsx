@@ -17,7 +17,7 @@ const Footer = () => {
                             </div>
                         </Link>
                         <p className="text-gray-400 mb-6 leading-relaxed">
-                            Premier event planning company in Chennai with 15+ years of experience creating unforgettable celebrations.
+                            Premier event planning company in Chennai with 11+ years of experience creating unforgettable celebrations.
                         </p>
                     </div>
 
@@ -40,7 +40,7 @@ const Footer = () => {
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Wedding Events</Link></li>
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Corporate Events</Link></li>
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Birthday Parties</Link></li>
-                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Anniversary Celebrations</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Sports Events</Link></li>
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">School & College Events</Link></li>
                         </ul>
                     </div>

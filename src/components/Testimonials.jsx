@@ -18,9 +18,9 @@ const testimonials = [
         color: "from-blue-500 to-indigo-700"
     },
     {
-        text: "They turned our simple anniversary into a grand affair! The team's dedication and creativity were outstanding. Every guest was amazed by the decor and arrangements!",
+        text: "They turned our annual sports day into a grand affair! The team's dedication and organization were outstanding. Every participant was amazed by the arrangements!",
         name: "Lakshmi Venkataraman",
-        event: "Golden Anniversary • 2024",
+        event: "Annual Sports Meet • 2024",
         initials: "L",
         color: "from-emerald-400 to-teal-600"
     }

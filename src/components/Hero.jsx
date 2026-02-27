@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="absolute inset-0 w-full h-full">
                 <img
                     src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80"
-                    alt="Elegant Event"
+                    alt="Elegant wedding event with decorative lighting and floral arrangements"
                     className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-gray-900"></div>

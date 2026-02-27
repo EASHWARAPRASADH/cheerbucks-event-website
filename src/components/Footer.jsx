@@ -39,9 +39,11 @@ const Footer = () => {
                         <ul className="flex flex-col gap-3">
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Wedding Events</Link></li>
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Corporate Events</Link></li>
-                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Birthday Parties</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Birthday Celebrations</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Anniversary Celebrations</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Baby Photoshoot</Link></li>
                             <li><Link to="/services" className="hover:text-primary-400 transition-colors">Sports Events</Link></li>
-                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">School & College Events</Link></li>
+                            <li><Link to="/services" className="hover:text-primary-400 transition-colors">Wedding Decor and Baby shower</Link></li>
                         </ul>
                     </div>
 
@@ -62,7 +64,7 @@ const Footer = () => {
                             </li>
                             <li className="flex gap-3">
                                 <span className="text-primary-500 text-lg">📍</span>
-                                <span>N05/1st Floor, Nellayapar 1st Cross Street, Bharathipuram, Chrompet, Chennai - 600044</span>
+                                <span>No 7, Guru Krupa, Usha Nagar Second Street, Ullagaram, Chennai - 600091</span>
                             </li>
                         </ul>
                     </div>
@@ -72,11 +74,11 @@ const Footer = () => {
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p>© 2025 Cheerbucks™. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span>|</span>
-                        <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>
-                    <p>Made with ❤️ in Chennai</p>
+                    <p>Powered by <a href="https://www.technosprint.net" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors">Technosprint Info Solutions</a></p>
                 </div>
             </div>
         </footer>

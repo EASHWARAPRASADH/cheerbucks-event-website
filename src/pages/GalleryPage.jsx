@@ -1,80 +1,151 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Folder, ArrowLeft, Image as ImageIcon } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { generateStructuredData } from '../utils/structuredData';
 
 const categories = [
     {
-        id: 'wedding',
-        title: 'Wedding Events',
-        coverImage: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
-        images: [
-            '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg',
-            '/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.26%20PM.jpeg',
-            'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80',
-            'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80'
-        ]
-    },
-    {
         id: 'corporate',
         title: 'Corporate Events',
-        coverImage: '/assets/Star/star%2012.jpeg',
+        coverImage: '/assets/Star/star%205.jpeg',
         images: [
-            '/assets/Star/star%2012.jpeg',
-            '/assets/Star/star%203.jpeg',
-            '/assets/Star/star%2021.jpeg',
-            'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&q=80'
+            '/assets/Star/star%205.jpeg',
+            '/assets/Star/star%207.jpeg',
+            '/assets/Star/star%209.jpeg',
+            '/assets/Star/star%2011.jpeg',
+            '/assets/ad/card%20cheerbucks.jpeg',
+            '/assets/ad/event%20cb.jpeg',
+            '/assets/ad/event%20manager%20cb.jpeg',
+            'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&q=80',
+            'https://images.unsplash.com/photo-1497366214043-9ec1a84c71f5?w=800&q=80'
         ]
     },
     {
         id: 'birthday',
         title: 'Birthday Celebrations',
-        coverImage: '/assets/Bithday/decoration/m%20birthday.jpeg',
+        coverImage: '/assets/Birthday_decor/birthday-decor-1.jpg',
         images: [
-            '/assets/Bithday/decoration/m%20birthday.jpeg',
-            '/assets/Bithday/baby%201/2.jpg.jpeg',
-            '/assets/Bithday/baby%203/b%20birthday.jpeg',
-            '/assets/Bithday/baby%201/cake/1.jpg.jpeg',
-            '/assets/Bithday/baby%202/6b.jpg.jpeg',
-            '/assets/Bithday/baby%201/decoration/3.jpg.jpeg',
-            '/assets/Bithday/cake/cake%202.jpeg'
+            '/assets/Birthday_decor/birthday-decor-1.jpg',
+            '/assets/Birthday_decor/birthday-decor-2.jpg',
+            '/assets/Birthday_decor/birthday-decor-3.jpg',
+            '/assets/Birthday_decor/birthday-decor-4.jpg',
+            '/assets/Birthday_decor/birthday-decor-5.jpg',
+            '/assets/Birthday_decor/birthday-decor-6.jpg',
+            '/assets/Birthday_decor/birthday-decor-7.jpg',
+            '/assets/Birthday_decor/birthday-decor-8.jpg',
+            '/assets/Birthday_decor/birthday-decor-9.jpg',
+            '/assets/Birthday_decor/birthday-decor-10.jpg',
+            '/assets/Birthday_decor/birthday-decor-11.jpg',
+            '/assets/Birthday_decor/birthday-decor-12.jpg',
+            '/assets/Birthday_decor/birthday-decor-13.jpg',
+            '/assets/Birthday_decor/birthday-decor-14.jpg',
+            '/assets/Birthday_decor/birthday-decor-15.jpg'
+        ]
+    },
+    {
+        id: 'anniversary',
+        title: 'Anniversary Celebrations',
+        coverImage: '/assets/anniversary/anniversary-1.jpeg',
+        images: [
+            '/assets/anniversary/anniversary-1.jpeg',
+            '/assets/anniversary/anniversary-2.jpeg',
+            '/assets/anniversary/anniversary-3.jpeg',
+            '/assets/anniversary/anniversary-4.jpeg',
+            '/assets/anniversary/anniversary-5.jpeg',
+            '/assets/anniversary/anniversary-6.jpeg',
+            '/assets/anniversary/anniversary-7.jpeg',
+            '/assets/anniversary/anniversary-8.jpeg',
+            '/assets/anniversary/anniversary-9.jpeg',
+            '/assets/anniversary/anniversary-10.jpeg',
+            '/assets/anniversary/anniversary-11.jpeg',
+            '/assets/anniversary/anniversary-12.jpeg',
+            '/assets/anniversary/anniversary-13.jpeg',
+            '/assets/anniversary/anniversary-14.jpeg',
+            '/assets/anniversary/anniversary-15.jpeg',
+            '/assets/anniversary/anniversary-16.jpeg',
+            '/assets/anniversary/anniversary-17.jpeg',
+            '/assets/anniversary/anniversary-18.jpeg'
+        ]
+    },
+    {
+        id: 'baby-photoshoot',
+        title: 'Baby Photoshoot',
+        coverImage: '/assets/Baby_Photoshoot/baby-photoshoot-1.jpg',
+        images: [
+            '/assets/Baby_Photoshoot/baby-photoshoot-1.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-2.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-3.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-4.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-5.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-6.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-7.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-8.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-9.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-10.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-11.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-12.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-13.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-14.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-15.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-16.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-17.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-18.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-19.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-20.jpg'
         ]
     },
     {
         id: 'sports',
         title: 'Sports Events',
-        coverImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
+        coverImage: '/assets/Sports/sports.jpeg',
         images: [
-            'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80',
-            'https://images.unsplash.com/photo-1526676037777-05a232554f77?w=800&q=80',
-            'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80'
+            '/assets/Sports/sports.jpeg',
+            '/assets/Sports/sports1.jpeg',
+            '/assets/Sports/sports2.jpeg',
+            '/assets/Sports/sports3.jpeg',
+            '/assets/Sports/sports4.jpeg',
+            '/assets/Sports/sports5.jpeg',
+            '/assets/Sports/sports6.jpeg',
+            '/assets/Sports/sports7.jpeg',
+            '/assets/Sports/sports8.jpeg',
+            '/assets/Sports/sports9.jpeg',
+            '/assets/Sports/sports10.jpeg',
+            '/assets/Sports/sports11.jpeg'
         ]
     },
     {
-        id: 'school',
-        title: 'School & College',
-        coverImage: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+        id: 'wedding-decor-baby-shower',
+        title: 'Wedding Decor and Baby shower',
+        coverImage: '/assets/Wedding Decor and Baby shower/wedding-baby-1.jpg',
         images: [
-            'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
-            'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'
-        ]
-    },
-    {
-        id: 'cultural',
-        title: 'Cultural Programs',
-        coverImage: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
-        images: [
-            'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
-            'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80'
+            '/assets/Wedding Decor and Baby shower/wedding-baby-1.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-2.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-3.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-4.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-5.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-6.jpg'
         ]
     }
 ];
 
 const GalleryPage = () => {
     const [activeFolder, setActiveFolder] = useState(null);
+    const location = useLocation();
+    const structuredData = generateStructuredData('gallery');
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [activeFolder]);
+        
+        // Check if we have a category from navigation state
+        if (location.state?.category) {
+            const category = categories.find(cat => cat.id === location.state.category);
+            if (category) {
+                setActiveFolder(category);
+            }
+        }
+    }, [location.state]);
 
     const handleFolderClick = (category) => {
         setActiveFolder(category);
@@ -85,7 +156,17 @@ const GalleryPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <>
+            <SEO 
+                title="Event Gallery - Wedding & Corporate Event Photos | Cheerbucks Events"
+                description="Browse our extensive gallery of successful events including weddings, corporate events, birthdays, and celebrations across Chennai. See our event planning expertise."
+                keywords="event gallery Chennai, wedding photos, corporate event photos, birthday celebration photos, event planning portfolio, Cheerbucks events gallery"
+                ogImage="https://cheerbucks.com/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg"
+                ogUrl="https://cheerbucks.com/gallery"
+                canonicalUrl="https://cheerbucks.com/gallery"
+                structuredData={structuredData}
+            />
+            <div className="min-h-screen bg-gray-50 flex flex-col">
             {/* Page Header */}
             <section className="bg-primary-900 pt-32 pb-20 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-gray-900 opacity-80" />
@@ -142,7 +223,7 @@ const GalleryPage = () => {
                                             <img
                                                 src={category.coverImage}
                                                 alt={category.title}
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                                className="w-full h-full object-cover object-center scale-110 transform group-hover:scale-105 transition-transform duration-700"
                                             />
                                             {/* Folder Tab Visual Effect */}
                                             <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2 text-primary-700 font-medium shadow-md">
@@ -190,7 +271,7 @@ const GalleryPage = () => {
                                             <img
                                                 src={src}
                                                 alt={`${activeFolder.title} Image ${index + 1}`}
-                                                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                                className="w-full h-auto object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                                             />
                                             <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/20 transition-colors duration-300 pointer-events-none" />
                                         </motion.div>
@@ -202,6 +283,7 @@ const GalleryPage = () => {
                 </div>
             </section>
         </div>
+        </>
     );
 };
 

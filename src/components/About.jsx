@@ -26,7 +26,7 @@ const About = () => {
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"
-                                alt="About Cheerbucks"
+                                alt="Professional event planning team coordinating a beautiful wedding reception with elegant decorations"
                                 className="w-full h-[500px] object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent" />

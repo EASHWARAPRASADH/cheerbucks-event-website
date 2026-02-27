@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cheerbucks.com/sitemap.xml
+
+# Block common non-content files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git
+Disallow: /dist/
+Disallow: /*.json$
+Disallow: /*.jsx$
+
+# Allow specific assets
+Allow: /assets/
+Allow: /public/
+
+# Crawl delay (optional, for large sites)
+Crawl-delay: 1
+
+# Host (for search engines that support it)
+Host: https://cheerbucks.com

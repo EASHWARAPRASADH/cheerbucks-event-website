@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 
@@ -20,7 +19,7 @@ const Breadcrumbs = () => {
             'terms-of-service': { name: 'Terms of Service', path: '/terms-of-service' }
         };
 
-        pathnames.forEach((path, index) => {
+        pathnames.forEach((path) => {
             if (routeMap[path]) {
                 breadcrumbs.push(routeMap[path]);
             }

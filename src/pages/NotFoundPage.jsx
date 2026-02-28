@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Home, Search, ArrowLeft } from 'lucide-react';
@@ -37,7 +37,7 @@ const NotFoundPage = () => {
                         transition={{ delay: 0.4 }}
                         className="text-xl text-gray-300 max-w-2xl mx-auto mb-8"
                     >
-                        Oops! The page you're looking for seems to have vanished into thin air.
+                        Oops! The page you&apos;re looking for seems to have vanished into thin air.
                     </motion.p>
 
                     <motion.div

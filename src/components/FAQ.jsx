@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Users, CreditCard, MapPin, Star, Shield } from 'lucide-react';
+import { FadeUp, StaggerContainer, StaggerItem } from './ScrollReveal';
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -72,47 +73,24 @@ const FAQ = () => {
             <div className="container">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4"
-                    >
+                    <FadeUp className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4">
                         ❓ Frequently Asked Questions
-                    </motion.div>
+                    </FadeUp>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-serif text-gray-900 mb-4"
-                    >
+                    <FadeUp delay={0.1} className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">
                         Got Questions? <span className="italic text-primary-600">We Have Answers</span>
-                    </motion.h2>
+                    </FadeUp>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg text-gray-600"
-                    >
+                    <FadeUp delay={0.2} className="text-lg text-gray-600">
                         Find answers to common questions about our event planning services. 
-                        Can't find what you're looking for? Feel free to contact us directly!
-                    </motion.p>
+                        Can&apos;t find what you&apos;re looking for? Feel free to contact us directly!
+                    </FadeUp>
                 </div>
 
                 {/* FAQ Items */}
-                <div className="max-w-4xl mx-auto space-y-4">
+                <StaggerContainer staggerDelay={0.1} className="max-w-4xl mx-auto space-y-4">
                     {faqs.map((faq, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-primary-300 transition-all duration-300"
-                        >
+                        <StaggerItem key={index} delay={index * 0.1} className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                             <button
                                 onClick={() => toggleFAQ(index)}
                                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-primary-50 transition-colors duration-200"
@@ -149,18 +127,12 @@ const FAQ = () => {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        </motion.div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
 
                 {/* Contact CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="text-center mt-16"
-                >
+                <FadeUp delay={0.5} className="text-center mt-16">
                     <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-white">
                         <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
                             Still Have Questions?
@@ -186,7 +158,7 @@ const FAQ = () => {
                             </a>
                         </div>
                     </div>
-                </motion.div>
+                </FadeUp>
             </div>
         </section>
     );

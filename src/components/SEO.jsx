@@ -1,5 +1,5 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import PropTypes from 'prop-types';
 
 const SEO = ({ 
   title, 
@@ -15,10 +15,10 @@ const SEO = ({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDescription = 'Cheerbucks - Premier event planning company in Chennai with 11+ years of experience creating unforgettable weddings, corporate events, birthdays, and special celebrations.';
   const finalDescription = description || defaultDescription;
-  const siteUrl = 'https://cheerbucks.com';
-  const finalOgUrl = ogUrl || siteUrl;
-  const finalCanonicalUrl = canonicalUrl || siteUrl;
-  const finalOgImage = ogImage || `${siteUrl}/assets/logo.jpeg`;
+  const siteUrl = typeof process !== 'undefined' && process.env.NODE_ENV === 'production' ? 'https://cheerbucks.com' : ''; // eslint-disable-line no-undef
+  const finalOgUrl = ogUrl || '';
+  const finalCanonicalUrl = canonicalUrl || '';
+  const finalOgImage = ogImage || '/assets/logo.jpeg';
 
   return (
     <Helmet>
@@ -86,6 +86,17 @@ const SEO = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     </Helmet>
   );
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  keywords: PropTypes.string,
+  ogImage: PropTypes.string,
+  ogUrl: PropTypes.string,
+  canonicalUrl: PropTypes.string,
+  type: PropTypes.string,
+  structuredData: PropTypes.object
 };
 
 export default SEO;

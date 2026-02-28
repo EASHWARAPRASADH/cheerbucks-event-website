@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Calendar, Shield, AlertCircle } from 'lucide-react';
 
@@ -48,7 +48,7 @@ const TermsOfService = () => {
                                     Agreement to Terms
                                 </h2>
                                 <p className="text-gray-600 leading-relaxed">
-                                    Welcome to Cheerbucks Events! These Terms of Service ("Terms") govern your use of our 
+                                    Welcome to Cheerbucks Events! These Terms of Service (&quot;Terms&quot;) govern your use of our 
                                     event planning services, website, and communications. By accessing or using our services, 
                                     you agree to be bound by these Terms.
                                 </p>

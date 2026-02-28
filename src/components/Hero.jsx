@@ -1,16 +1,19 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ThreeHeroBackground from './ThreeHeroBackground';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-gray-900">
+        <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+            {/* Three.js Background */}
+            <ThreeHeroBackground />
+            
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0 w-full h-full opacity-30">
                 <img
                     src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80"
                     alt="Elegant wedding event with decorative lighting and floral arrangements"
-                    className="w-full h-full object-cover opacity-60"
+                    className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-gray-900"></div>
             </div>
@@ -21,7 +24,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="inline-block mb-6 px-4 py-1 rounded-full border border-primary-400/50 bg-primary-500/10 backdrop-blur-sm text-primary-300 text-sm font-medium"
+                    className="inline-block mb-6 px-4 py-1 rounded-full border border-primary-400/50 bg-primary-500/20 backdrop-blur-sm text-primary-200 text-sm font-medium shadow-lg"
                 >
                     ✨ Premier Event Management in Chennai
                 </motion.div>
@@ -33,7 +36,7 @@ const Hero = () => {
                     className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight max-w-5xl"
                 >
                     We Turn Your Moments <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-primary-500 italic">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-primary-400 italic drop-shadow-lg">
                         Into Celebrations
                     </span>
                 </motion.h1>

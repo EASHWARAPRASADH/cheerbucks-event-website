@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
@@ -29,7 +29,7 @@ const ContactPage = () => {
         }
         
         // Phone validation
-        const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
+        const phoneRegex = /^[+]?[\d\s\-)]+$/;
         if (!formData.phone.trim()) {
             newErrors.phone = 'Phone number is required';
         } else if (!phoneRegex.test(formData.phone)) {
@@ -141,7 +141,7 @@ Looking forward to hearing from you!`;
                         transition={{ delay: 0.1 }}
                         className="text-xl text-gray-300 max-w-2xl mx-auto"
                     >
-                        Let's start planning your dream event today.
+                        Let&apos;s start planning your dream event today.
                     </motion.p>
                 </div>
             </section>

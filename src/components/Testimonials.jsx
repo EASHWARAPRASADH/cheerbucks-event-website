@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { FadeUp } from './ScrollReveal';
 
 const testimonials = [
     {
@@ -55,23 +56,17 @@ const Testimonials = () => {
         <section className="section-padding bg-gradient-to-br from-gray-50 to-primary-50">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4"
-                    >
+                    <FadeUp className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4">
                         💬 Client Stories
-                    </motion.div>
+                    </FadeUp>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-serif text-gray-900 mb-4"
-                    >
+                    <FadeUp delay={0.1} className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">
                         What Our <span className="italic text-primary-600">Clients Say</span>
-                    </motion.h2>
+                    </FadeUp>
+
+                    <FadeUp delay={0.2} className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Real experiences from real clients who trusted us with their special moments
+                    </FadeUp>
                 </div>
 
                 <div className="relative max-w-4xl mx-auto">
@@ -111,7 +106,7 @@ const Testimonials = () => {
                                 </div>
 
                                 <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed relative z-10 font-serif italic">
-                                    "{testimonials[current].text}"
+                                    &quot;{testimonials[current].text}&quot;
                                 </p>
 
                                 <div className="flex items-center gap-4">

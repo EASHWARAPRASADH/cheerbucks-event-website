@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Briefcase, Gift, Trophy, BookOpen, Music, X, ArrowRight, Phone, MessageCircle, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { Heart, Briefcase, Gift, Trophy, X, ArrowRight, Phone, MessageCircle, Image as ImageIcon, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { FadeUp } from './ScrollReveal';
 
 const services = [
     {
@@ -9,13 +10,13 @@ const services = [
         title: 'Corporate Events',
         desc: 'Professional meets, conferences & seminars',
         icon: <Briefcase size={32} />,
-        image: '/assets/Star/star%205.jpeg',
+        image: '/assets/Corporate_Events/corporate event 2.jpeg',
         color: 'from-blue-500/20 to-indigo-500/20',
         gallery: [
-            '/assets/Star/star%205.jpeg',
-            '/assets/Star/star%207.jpeg',
-            '/assets/Star/star%209.jpeg',
-            '/assets/Star/star%2011.jpeg'
+            '/assets/Corporate_Events/corporate event 2.jpeg',
+            '/assets/Corporate_Events/corporate event 3.jpeg',
+            '/assets/Corporate_Events/corporate event 4.jpeg',
+            '/assets/Corporate_Events/corporate event 5.jpeg'
         ]
     },
     {
@@ -29,7 +30,7 @@ const services = [
             '/assets/Birthday_decor/birthday-decor-1.jpg',
             '/assets/Birthday_decor/birthday-decor-2.jpg',
             '/assets/Birthday_decor/birthday-decor-3.jpg',
-            '/assets/Birthday_decor/birthday-decor-4.jpg'
+            '/assets/Birthday_decor/birthday-decor-4.jpg',
         ]
     },
     {
@@ -43,7 +44,13 @@ const services = [
             '/assets/anniversary/anniversary-1.jpeg',
             '/assets/anniversary/anniversary-2.jpeg',
             '/assets/anniversary/anniversary-3.jpeg',
-            '/assets/anniversary/anniversary-4.jpeg'
+            '/assets/anniversary/anniversary-4.jpeg',
+            '/assets/anniversary/anniversary-5.jpeg',
+            '/assets/anniversary/anniversary-6.jpeg',
+            '/assets/anniversary/anniversary-7.jpeg',
+            '/assets/anniversary/anniversary-8.jpeg',
+            '/assets/anniversary/anniversary-19.jpeg',
+            '/assets/anniversary/anniversary-20.jpeg'
         ]
     },
     {
@@ -85,7 +92,8 @@ const services = [
             '/assets/Wedding Decor and Baby shower/wedding-baby-1.jpg',
             '/assets/Wedding Decor and Baby shower/wedding-baby-2.jpg',
             '/assets/Wedding Decor and Baby shower/wedding-baby-3.jpg',
-            '/assets/Wedding Decor and Baby shower/wedding-baby-4.jpg'
+            '/assets/Wedding Decor and Baby shower/wedding-baby-4.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-7.png'
         ]
     }
 ];
@@ -124,36 +132,21 @@ const Services = () => {
 
     return (
         <>
-            <section id="services" className="section-padding bg-gray-50">
+            <section id="services" className="section-padding bg-white">
                 <div className="container">
 
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4"
-                        >
+                        <FadeUp className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4">
                             🎉 Our Services
-                        </motion.div>
+                        </FadeUp>
 
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-serif text-gray-900 mb-4"
-                        >
+                        <FadeUp delay={0.1} className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">
                             Events We <span className="italic text-primary-600">Specialize In</span>
-                        </motion.h2>
+                        </FadeUp>
 
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-lg text-gray-600"
-                        >
+                        <FadeUp delay={0.2} className="text-lg text-gray-600">
                             From intimate family gatherings to massive corporate affairs, we handle every type of event with equal passion and professionalism.
-                        </motion.p>
+                        </FadeUp>
                     </div>
 
                     <motion.div
@@ -161,11 +154,12 @@ const Services = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
                     >
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
+                                id={service.id}
                                 variants={itemVariants}
                                 className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100"
                             >
@@ -177,6 +171,7 @@ const Services = () => {
                                         src={service.image}
                                         alt={service.title}
                                         className="w-full h-full object-cover"
+                                        loading="lazy"
                                     />
 
                                     <div className="absolute top-4 right-4 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-600 shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
@@ -204,12 +199,7 @@ const Services = () => {
                     </motion.div>
 
                     {/* CTA Banner integrated into services */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-20 bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between text-white shadow-2xl relative overflow-hidden"
-                    >
+                    <FadeUp className="mt-20 bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between text-white shadow-2xl relative overflow-hidden">
                         {/* Decorative circles */}
                         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-48 h-48 rounded-full bg-primary-400/20 blur-2xl"></div>
@@ -227,7 +217,7 @@ const Services = () => {
                                 Plan Your Event →
                             </Link>
                         </div>
-                    </motion.div>
+                    </FadeUp>
 
                 </div>
             </section>
@@ -247,7 +237,7 @@ const Services = () => {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+                            className="bg-white rounded-2xl sm:rounded-3xl max-w-6xl w-full max-h-[98vh] overflow-hidden shadow-2xl mx-4 sm:mx-0"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Modal Header */}
@@ -271,24 +261,24 @@ const Services = () => {
                             </div>
 
                             {/* Modal Content */}
-                            <div className="p-8 overflow-y-auto max-h-[calc(90vh-12rem)]">
+                            <div className="p-8 overflow-y-auto max-h-[calc(95vh-10rem)]">
                                 {/* Gallery Section */}
                                 <div className="mb-8">
                                     <div className="flex items-center justify-between mb-4">
                                         <h3 className="text-2xl font-serif font-bold text-gray-900 flex items-center gap-2">
                                             <ImageIcon size={24} className="text-primary-600" />
-                                            Gallery
+                                            Gallery ({selectedService.gallery.length} images)
                                         </h3>
                                         <Link
                                             to="/gallery"
                                             state={{ category: selectedService.id }}
                                             className="flex items-center gap-2 text-primary-600 hover:text-primary-800 font-medium transition-colors group"
                                         >
-                                            <span>See more</span>
+                                            <span>View all in gallery</span>
                                             <ExternalLink size={16} className="transform group-hover:translate-x-1 transition-transform" />
                                         </Link>
                                     </div>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                         {selectedService.gallery.map((image, index) => (
                                             <motion.div
                                                 key={index}
@@ -301,6 +291,7 @@ const Services = () => {
                                                     src={image}
                                                     alt={`${selectedService.title} ${index + 1}`}
                                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                                                    loading="lazy"
                                                 />
                                             </motion.div>
                                         ))}

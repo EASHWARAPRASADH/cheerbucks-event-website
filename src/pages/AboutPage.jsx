@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import About from '../components/About';
 import Stats from '../components/Stats';
@@ -27,7 +27,7 @@ const AboutPage = () => {
                         transition={{ delay: 0.1 }}
                         className="text-xl text-gray-300 max-w-2xl mx-auto"
                     >
-                        Chennai's premier event planning company, dedicated to transforming your special moments into extraordinary celebrations.
+                        Chennai&apos;s premier event planning company, dedicated to transforming your special moments into extraordinary celebrations.
                     </motion.p>
                 </div>
             </section>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Stats from '../components/Stats';
@@ -17,9 +16,9 @@ const Home = () => {
                 title="Premier Event Planning in Chennai | Wedding & Corporate Events"
                 description="Cheerbucks Events - Chennai's premier event planning company with 11+ years of experience creating unforgettable weddings, corporate events, birthdays, and special celebrations."
                 keywords="event planning Chennai, wedding planners Chennai, birthday organizers, corporate events Chennai, event management, Cheerbucks, wedding decorations, anniversary celebrations"
-                ogImage="https://cheerbucks.com/assets/logo.jpeg"
-                ogUrl="https://cheerbucks.com"
-                canonicalUrl="https://cheerbucks.com"
+                ogImage="/assets/logo.jpeg"
+                ogUrl=""
+                canonicalUrl=""
                 structuredData={structuredData}
             />
             <Hero />

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Services from '../components/Services';
 
@@ -8,10 +8,10 @@ const ServicesPage = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen bg-white flex flex-col">
             {/* Page Header */}
-            <section className="bg-primary-900 pt-32 pb-20 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-gray-900 opacity-80" />
+            <section className="bg-primary-500 pt-32 pb-20 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 opacity-90" />
                 <div className="container relative z-10">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}

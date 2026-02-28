@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Folder, ArrowLeft, Image as ImageIcon } from 'lucide-react';
+import { Folder, ArrowLeft, Image as ImageIcon, Search } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { generateStructuredData } from '../utils/structuredData';
@@ -9,17 +9,22 @@ const categories = [
     {
         id: 'corporate',
         title: 'Corporate Events',
-        coverImage: '/assets/Star/star%205.jpeg',
+        coverImage: '/assets/Corporate_Events/corporate event 2.jpeg',
         images: [
-            '/assets/Star/star%205.jpeg',
-            '/assets/Star/star%207.jpeg',
-            '/assets/Star/star%209.jpeg',
-            '/assets/Star/star%2011.jpeg',
-            '/assets/ad/card%20cheerbucks.jpeg',
-            '/assets/ad/event%20cb.jpeg',
-            '/assets/ad/event%20manager%20cb.jpeg',
-            'https://images.unsplash.com/photo-1515169067868-5387ec356754?w=800&q=80',
-            'https://images.unsplash.com/photo-1497366214043-9ec1a84c71f5?w=800&q=80'
+            '/assets/Corporate_Events/corporate event 2.jpeg',
+            '/assets/Corporate_Events/corporate event 3.jpeg',
+            '/assets/Corporate_Events/corporate event 4.jpeg',
+            '/assets/Corporate_Events/corporate event 5.jpeg',
+            '/assets/Corporate_Events/corporate event 6.jpeg',
+            '/assets/Corporate_Events/corporate event 7.jpeg',
+            '/assets/Corporate_Events/corporate event 8.jpeg',
+            '/assets/Corporate_Events/corporate event 9.jpeg',
+            '/assets/Corporate_Events/corporate event 10.jpeg',
+            '/assets/Corporate_Events/corporate event 11.jpeg',
+            '/assets/Corporate_Events/corporate event 12.jpeg',
+            '/assets/Corporate_Events/corporate event 13.jpeg',
+            '/assets/Corporate_Events/corporate event 14.jpeg',
+            '/assets/Corporate_Events/corporate event 15.jpeg'
         ]
     },
     {
@@ -41,7 +46,30 @@ const categories = [
             '/assets/Birthday_decor/birthday-decor-12.jpg',
             '/assets/Birthday_decor/birthday-decor-13.jpg',
             '/assets/Birthday_decor/birthday-decor-14.jpg',
-            '/assets/Birthday_decor/birthday-decor-15.jpg'
+            '/assets/Birthday_decor/birthday-decor-15.jpg',
+            '/assets/Birthday_decor/birthday-decor-16.jpg',
+            '/assets/Birthday_decor/birthday-decor-17.jpg',
+            '/assets/Birthday_decor/birthday-decor-18.jpg',
+            '/assets/Birthday_decor/birthday-decor-19.jpg',
+            '/assets/Birthday_decor/birthday-decor-20.jpg',
+            '/assets/Birthday_decor/birthday-decor-21.jpg',
+            '/assets/Birthday_decor/birthday-decor-22.jpg',
+            '/assets/Birthday_decor/birthday-decor-23.jpg',
+            '/assets/Birthday_decor/birthday-decor-24.jpg',
+            '/assets/Birthday_decor/birthday-decor-25.jpg',
+            '/assets/Birthday_decor/birthday-decor-26.jpg',
+            '/assets/Birthday_decor/birthday-decor-27.jpg',
+            '/assets/Birthday_decor/birthday-decor-28.jpg',
+            '/assets/Birthday_decor/birthday-decor-29.jpg',
+            '/assets/Birthday_decor/birthday-decor-30.jpg',
+            '/assets/Birthday_decor/birthday-decor-31.jpg',
+            '/assets/Birthday_decor/birthday-decor-32.png',
+            '/assets/Birthday_decor/birthday-decor-33.jpg',
+            '/assets/Birthday_decor/birthday-decor-34.jpg',
+            '/assets/Birthday_decor/birthday-decor-35.jpg',
+            '/assets/Birthday_decor/birthday-decor-36.jpg',
+            '/assets/Birthday_decor/birthday-decor-37.jpg',
+            '/assets/Birthday_decor/birthday-decor-38.jpg'
         ]
     },
     {
@@ -66,7 +94,9 @@ const categories = [
             '/assets/anniversary/anniversary-15.jpeg',
             '/assets/anniversary/anniversary-16.jpeg',
             '/assets/anniversary/anniversary-17.jpeg',
-            '/assets/anniversary/anniversary-18.jpeg'
+            '/assets/anniversary/anniversary-18.jpeg',
+            '/assets/anniversary/anniversary-19.jpg',
+            '/assets/anniversary/anniversary-20.jpg'
         ]
     },
     {
@@ -93,13 +123,14 @@ const categories = [
             '/assets/Baby_Photoshoot/baby-photoshoot-17.jpg',
             '/assets/Baby_Photoshoot/baby-photoshoot-18.jpg',
             '/assets/Baby_Photoshoot/baby-photoshoot-19.jpg',
-            '/assets/Baby_Photoshoot/baby-photoshoot-20.jpg'
+            '/assets/Baby_Photoshoot/baby-photoshoot-20.jpg',
+            '/assets/Baby_Photoshoot/baby-photoshoot-21.jpeg'
         ]
     },
     {
         id: 'sports',
         title: 'Sports Events',
-        coverImage: '/assets/Sports/sports.jpeg',
+        coverImage: '/assets/Sports/sports1.jpeg',
         images: [
             '/assets/Sports/sports.jpeg',
             '/assets/Sports/sports1.jpeg',
@@ -112,7 +143,16 @@ const categories = [
             '/assets/Sports/sports8.jpeg',
             '/assets/Sports/sports9.jpeg',
             '/assets/Sports/sports10.jpeg',
-            '/assets/Sports/sports11.jpeg'
+            '/assets/Sports/sports11.jpeg',
+            '/assets/Sports/sports12.jpeg',
+            '/assets/Sports/sports13.jpeg',
+            '/assets/Sports/sports14.jpeg',
+            '/assets/Sports/sports15.jpeg',
+            '/assets/Sports/sports16.jpeg',
+            '/assets/Sports/sports17.jpeg',
+            '/assets/Sports/sports18.jpeg',
+            '/assets/Sports/sports19.jpeg',
+            '/assets/Sports/sports20.jpeg'
         ]
     },
     {
@@ -125,13 +165,16 @@ const categories = [
             '/assets/Wedding Decor and Baby shower/wedding-baby-3.jpg',
             '/assets/Wedding Decor and Baby shower/wedding-baby-4.jpg',
             '/assets/Wedding Decor and Baby shower/wedding-baby-5.jpg',
-            '/assets/Wedding Decor and Baby shower/wedding-baby-6.jpg'
+            '/assets/Wedding Decor and Baby shower/wedding-baby-6.jpg',
+            '/assets/Wedding Decor and Baby shower/wedding-baby-7.png'
         ]
     }
 ];
 
 const GalleryPage = () => {
     const [activeFolder, setActiveFolder] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredCategories, setFilteredCategories] = useState(categories);
     const location = useLocation();
     const structuredData = generateStructuredData('gallery');
 
@@ -147,6 +190,19 @@ const GalleryPage = () => {
         }
     }, [location.state]);
 
+    useEffect(() => {
+        // Filter categories based on search term
+        if (searchTerm.trim() === '') {
+            setFilteredCategories(categories);
+        } else {
+            const filtered = categories.filter(category =>
+                category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                category.id.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setFilteredCategories(filtered);
+        }
+    }, [searchTerm]);
+
     const handleFolderClick = (category) => {
         setActiveFolder(category);
     };
@@ -161,15 +217,15 @@ const GalleryPage = () => {
                 title="Event Gallery - Wedding & Corporate Event Photos | Cheerbucks Events"
                 description="Browse our extensive gallery of successful events including weddings, corporate events, birthdays, and celebrations across Chennai. See our event planning expertise."
                 keywords="event gallery Chennai, wedding photos, corporate event photos, birthday celebration photos, event planning portfolio, Cheerbucks events gallery"
-                ogImage="https://cheerbucks.com/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg"
-                ogUrl="https://cheerbucks.com/gallery"
-                canonicalUrl="https://cheerbucks.com/gallery"
+                ogImage="/assets/Star/WhatsApp%20Image%202026-02-23%20at%2011.14.25%20PM.jpeg"
+                ogUrl="/gallery"
+                canonicalUrl="/gallery"
                 structuredData={structuredData}
             />
-            <div className="min-h-screen bg-gray-50 flex flex-col">
+            <div className="min-h-screen bg-white flex flex-col">
             {/* Page Header */}
-            <section className="bg-primary-900 pt-32 pb-20 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-gray-900 opacity-80" />
+            <section className="bg-primary-500 pt-32 pb-20 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 opacity-90" />
                 <div className="container relative z-10">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -201,6 +257,33 @@ const GalleryPage = () => {
             {/* Main Content */}
             <section className="py-20 flex-grow">
                 <div className="container max-w-6xl">
+                    {/* Search Bar */}
+                    {!activeFolder && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mb-8 sm:mb-12"
+                        >
+                            <div className="max-w-2xl mx-auto px-4">
+                                <div className="relative">
+                                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="text"
+                                        placeholder="Search events by name or type..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className="w-full pl-12 pr-4 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-300 text-gray-900 placeholder-gray-500 bg-white shadow-sm text-base sm:text-lg"
+                                    />
+                                </div>
+                                {searchTerm && (
+                                    <div className="mt-3 sm:mt-4 text-center text-gray-600 text-sm sm:text-base">
+                                        Found {filteredCategories.length} {filteredCategories.length === 1 ? 'category' : 'categories'} matching &quot;{searchTerm}&quot;
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    )}
+
                     <AnimatePresence mode="wait">
                         {!activeFolder ? (
                             <motion.div
@@ -209,9 +292,9 @@ const GalleryPage = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.4 }}
-                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
                             >
-                                {categories.map((category) => (
+                                {filteredCategories.map((category) => (
                                     <motion.div
                                         key={category.id}
                                         whileHover={{ y: -8 }}
@@ -223,7 +306,8 @@ const GalleryPage = () => {
                                             <img
                                                 src={category.coverImage}
                                                 alt={category.title}
-                                                className="w-full h-full object-cover object-center scale-110 transform group-hover:scale-105 transition-transform duration-700"
+                                                className="w-full h-full object-cover object-[20%_0] scale-110 transform group-hover:scale-105 transition-transform duration-700"
+                                                loading="lazy"
                                             />
                                             {/* Folder Tab Visual Effect */}
                                             <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2 text-primary-700 font-medium shadow-md">
@@ -259,7 +343,7 @@ const GalleryPage = () => {
                                     Back to Folders
                                 </button>
 
-                                <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 space-y-4 sm:space-y-6">
                                     {activeFolder.images.map((src, index) => (
                                         <motion.div
                                             key={`${activeFolder.id}-${index}`}
@@ -271,7 +355,8 @@ const GalleryPage = () => {
                                             <img
                                                 src={src}
                                                 alt={`${activeFolder.title} Image ${index + 1}`}
-                                                className="w-full h-auto object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                                                className="w-full h-auto object-cover object-[20%_0] transform group-hover:scale-105 transition-transform duration-700"
+                                                loading="lazy"
                                             />
                                             <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/20 transition-colors duration-300 pointer-events-none" />
                                         </motion.div>

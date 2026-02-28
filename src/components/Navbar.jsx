@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
@@ -56,19 +56,43 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Toggle */}
-                <button className={`md:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <button 
+                    className={`md:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`} 
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle mobile menu"
+                >
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full glass-card border-t border-gray-200 py-4 px-4 flex flex-col gap-4 shadow-xl">
-                    <NavLink to="/" className={({ isActive }) => `text-lg font-medium py-2 border-b border-gray-100 ${isActive ? 'text-primary-600' : 'text-gray-800'}`}>Home</NavLink>
-                    <NavLink to="/about" className={({ isActive }) => `text-lg font-medium py-2 border-b border-gray-100 ${isActive ? 'text-primary-600' : 'text-gray-800'}`}>About</NavLink>
-                    <NavLink to="/services" className={({ isActive }) => `text-lg font-medium py-2 border-b border-gray-100 ${isActive ? 'text-primary-600' : 'text-gray-800'}`}>Services</NavLink>
-                    <NavLink to="/gallery" className={({ isActive }) => `text-lg font-medium py-2 border-b border-gray-100 ${isActive ? 'text-primary-600' : 'text-gray-800'}`}>Gallery</NavLink>
-                    <Link to="/contact" className="btn btn-primary text-center mt-2">Plan Your Event</Link>
+                <div className="md:hidden absolute top-full left-0 w-full glass-card border-t border-gray-200 py-4 px-4 flex flex-col gap-2 shadow-xl">
+                    <NavLink 
+                        to="/" 
+                        className={({ isActive }) => `text-lg font-medium py-3 px-4 rounded-lg transition-colors ${isActive ? 'text-primary-600 bg-primary-50' : 'text-gray-800 hover:bg-gray-50'}`}
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink 
+                        to="/about" 
+                        className={({ isActive }) => `text-lg font-medium py-3 px-4 rounded-lg transition-colors ${isActive ? 'text-primary-600 bg-primary-50' : 'text-gray-800 hover:bg-gray-50'}`}
+                    >
+                        About
+                    </NavLink>
+                    <NavLink 
+                        to="/services" 
+                        className={({ isActive }) => `text-lg font-medium py-3 px-4 rounded-lg transition-colors ${isActive ? 'text-primary-600 bg-primary-50' : 'text-gray-800 hover:bg-gray-50'}`}
+                    >
+                        Services
+                    </NavLink>
+                    <NavLink 
+                        to="/gallery" 
+                        className={({ isActive }) => `text-lg font-medium py-3 px-4 rounded-lg transition-colors ${isActive ? 'text-primary-600 bg-primary-50' : 'text-gray-800 hover:bg-gray-50'}`}
+                    >
+                        Gallery
+                    </NavLink>
+                    <Link to="/contact" className="btn btn-primary text-center mt-2 py-3">Plan Your Event</Link>
                 </div>
             )}
         </nav>

@@ -34,7 +34,7 @@ const FAQ = () => {
         },
         {
             question: "How many events do you handle simultaneously?",
-            answer: "To ensure quality service, we typically handle 2-3 events per weekend, depending on size and complexity. Each event is assigned a dedicated team led by a senior event manager. We never compromise on attention to detail, regardless of how many events we're managing.",
+            answer: "To ensure quality service, we typically handle 2-3 events per weekend, depending on size and complexity. Each event is assigned a dedicated team led by a senior event manager. We never compromise on attention to detail, regardless of how many events we're managing. Our quality focus includes thorough planning, creative designs, flawless execution, and exceptional client satisfaction. The outcome is always memorable, stress-free events that exceed expectations and create lasting memories.",
             icon: <Users size={20} />
         },
         {

@@ -39,13 +39,8 @@ const FAQ = () => {
         },
         {
             question: "What makes Cheerbucks different from other event planners?",
-            answer: "With 11+ years of experience and 3500+ successful events, we bring unmatched expertise. Our difference lies in personalized attention, creative designs, transparent pricing, extensive vendor network, and 24/7 support. We treat every event as our own and ensure perfection in every detail.",
+            answer: "With 11+ years of experience and 3500+ successful events, we bring unmatched expertise. Our difference lies in personalized attention, creative designs, transparent pricing, and 24/7 support. We treat every event as our own and ensure perfection in every detail.",
             icon: <Star size={20} />
-        },
-        {
-            question: "Do you provide event insurance?",
-            answer: "While we don't directly provide insurance, we strongly recommend event insurance and can help you connect with insurance providers. Our contracts include liability coverage, and we maintain all necessary business licenses and insurance coverage for our operations.",
-            icon: <Shield size={20} />
         },
         {
             question: "How do I get started with your services?",

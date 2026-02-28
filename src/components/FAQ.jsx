@@ -28,16 +28,6 @@ const FAQ = () => {
             icon: <CreditCard size={20} />
         },
         {
-            question: "Do you provide vendor management?",
-            answer: "Yes, we have a network of trusted vendors including caterers, photographers, decorators, entertainers, and venue partners. We can manage all vendor coordination, or work with your preferred vendors. Our vendor relationships often result in better rates and priority service for our clients.",
-            icon: <Users size={20} />
-        },
-        {
-            question: "What happens if I need to cancel or reschedule?",
-            answer: "We understand that plans can change. Our cancellation policy: Up to 30 days before event - 80% refund; 15-29 days - 50% refund; Less than 15 days - No refund. Rescheduling is possible based on availability. We recommend event insurance for unforeseen circumstances.",
-            icon: <Calendar size={20} />
-        },
-        {
             question: "Do you handle both indoor and outdoor events?",
             answer: "Absolutely! We have extensive experience with both indoor and outdoor events. For outdoor events, we provide weather contingency planning, appropriate tenting, lighting, and power backup. We ensure your event runs smoothly regardless of the venue type.",
             icon: <MapPin size={20} />

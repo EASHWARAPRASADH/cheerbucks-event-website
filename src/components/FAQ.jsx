@@ -9,7 +9,7 @@ const FAQ = () => {
     const faqs = [
         {
             question: "How far in advance should I book your services?",
-            answer: "We recommend booking our services at least 2-3 months in advance for weddings and large events. For smaller events like birthdays, 1-2 months notice is usually sufficient. However, we can accommodate urgent requests based on availability, though additional charges may apply.",
+            answer: "We recommend booking our services at least 2-3 months in advance for weddings and large events. For smaller events like birthdays, 1 month notice is usually sufficient. However, we can accommodate urgent requests based on availability.",
             icon: <Calendar size={20} />
         },
         {
@@ -24,7 +24,7 @@ const FAQ = () => {
         },
         {
             question: "How do you price your services?",
-            answer: "Our pricing is customized based on event type, guest count, complexity, and specific requirements. We offer transparent pricing with no hidden charges. After understanding your needs, we provide a detailed quote with all inclusions. Prices start from ₹50,000 for small events and go up based on requirements.",
+            answer: "Our pricing is customized based on event type, guest count, complexity, and specific requirements. We offer transparent pricing with no hidden charges. After understanding your needs and budget, we provide a detailed proposal with all inclusions. We work within your budget to create the perfect event experience.",
             icon: <CreditCard size={20} />
         },
         {
@@ -34,7 +34,7 @@ const FAQ = () => {
         },
         {
             question: "What happens if I need to cancel or reschedule?",
-            answer: "We understand that plans can change. Our cancellation policy: Up to 30 days before event - 80% refund; 15-29 days - 50% refund; Less than 15 days - No refund. Rescheduling is possible based on availability and may involve additional charges. We recommend event insurance for unforeseen circumstances.",
+            answer: "We understand that plans can change. Our cancellation policy: Up to 30 days before event - 80% refund; 15-29 days - 50% refund; Less than 15 days - No refund. Rescheduling is possible based on availability. We recommend event insurance for unforeseen circumstances.",
             icon: <Calendar size={20} />
         },
         {
